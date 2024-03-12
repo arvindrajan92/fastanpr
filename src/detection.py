@@ -1,0 +1,2 @@
+from ultralytics import YOLO
+
