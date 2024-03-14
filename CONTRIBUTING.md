@@ -10,7 +10,7 @@ This section guides you through submitting a bug report for FastANPR. Following 
 
 **Before Submitting A Bug Report**
 
-- Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/fastanpr/issues).
+- Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/arvindrajan92/fastanpr/issues).
 - If you're unable to find an open issue addressing the problem, open a new one. Be sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
 
 ### Suggesting Enhancements
@@ -19,7 +19,7 @@ This section guides you through submitting an enhancement suggestion for FastANP
 
 **Before Submitting An Enhancement Suggestion**
 
-- Check the [Issues](https://github.com/fastanpr/issues) and [Discussions](https://github.com/fastanpr/discussions) for a similar suggestion.
+- Check the [Issues](https://github.com/arvindrajan92/fastanpr/issues) and [Discussions](https://github.com/arvindrajan92/fastanpr/discussions) for a similar suggestion.
 - When you are creating an enhancement suggestion, please include as many details as possible, including the reason for the enhancement and any specific use cases.
 
 ### Pull Requests
