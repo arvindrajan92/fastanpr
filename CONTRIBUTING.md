@@ -19,7 +19,7 @@ This section guides you through submitting an enhancement suggestion for FastANP
 
 **Before Submitting An Enhancement Suggestion**
 
-- Check the [Issues](https://github.com/arvindrajan92/fastanpr/issues) and [Discussions](https://github.com/arvindrajan92/fastanpr/discussions) for a similar suggestion.
+- Check the [Issues](https://github.com/arvindrajan92/fastanpr/issues) for a similar suggestion.
 - When you are creating an enhancement suggestion, please include as many details as possible, including the reason for the enhancement and any specific use cases.
 
 ### Pull Requests
