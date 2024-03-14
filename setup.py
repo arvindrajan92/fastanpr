@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
+VERSION = '0.1.0'
 DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
 LONG_DESCRIPTION = ('A package that employs lightweight models (such as YOLOv8) and library (such as Paddle OCR) for a '
                     'fast ANPR')
