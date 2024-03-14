@@ -18,6 +18,7 @@ setup(
     include_package_data=True,
     install_requires=['ultralytics>=8.1.26', 'paddlepaddle>=2.6.0', 'paddleocr>=2.7.0.3'],
     python_requires='>=3.9',
+    extras_require={'dev': ['pytest>=8.1.1', 'twine>=5.0.0']},
     license='MIT',
     classifiers=[
         "Programming Language :: Python :: 3.9",
