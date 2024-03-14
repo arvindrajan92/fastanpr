@@ -1,15 +1,20 @@
 import asyncio
 import numpy as np
+import pkg_resources
 from pathlib import Path
 from ultralytics import YOLO
 from paddleocr import PaddleOCR
 
-from numberplate import NumberPlate
+from .numberplate import NumberPlate
 from typing import Union, List, Tuple
 
 
 class FastANPR:
-    def __init__(self, detection_model: Union[str, Path] = Path('best.pt'), device: str = "cpu"):
+    def __init__(
+            self,
+            detection_model: Union[str, Path] = pkg_resources.resource_filename('fastanpr', 'best.pt'),
+            device: str = "cpu"
+    ):
         self.detector = YOLO(model=detection_model)
         self.recogniser = PaddleOCR(
             lang="en",
