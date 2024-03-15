@@ -16,12 +16,13 @@ from fastanpr import FastANPR
 # To use cuda, replace 'cpu' with 'cuda' or device id, e.g., '0'. Default is set to 'cpu'.
 fast_anpr = FastANPR(device='cpu')
 
-files = [...]
-
-for file in files:
+async def show_anpr_result(file: str) -> None:
     image = cv2.cvtColor(cv2.imread(file), cv2.COLOR_BGR2RGB)
-    anpr_result = asyncio.run(fast_anpr.run(image))
+    anpr_result = await fast_anpr.run(image)
     print(anpr_result)
+
+files = [...]
+_ = await asyncio.gather(*[show_anpr_result(file) for file in files])
 ```
 
 ## Licence
