@@ -1,4 +1,4 @@
-<img src="misc/logo.jpg" alt="alt-text" style="width:100%;">
+<img src="misc/logo.jpg" alt="FastANPR logo" style="width:100%;">
 
 [![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/arvindrajan92/fastanpr)](https://github.com/arvindrajan92/fastanpr/releases)
@@ -21,14 +21,14 @@ import cv2
 from fastanpr import FastANPR
 
 # Create an instance of FastANPR
-fastanpr = FastANPR()
+fast_anpr = FastANPR()
 
 # Load images (images should be of type numpy ndarray)
 files = [...]
 images = [cv2.cvtColor(cv2.imread(file), cv2.COLOR_BGR2RGB) for file in files]
 
 # Run ANPR on the images
-number_plates = await fastanpr.run(images)
+number_plates = await fast_anpr.run(images)
 
 # Print out results
 for file, plates in zip(files, number_plates):

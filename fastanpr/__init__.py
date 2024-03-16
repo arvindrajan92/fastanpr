@@ -6,7 +6,7 @@ from paddleocr import PaddleOCR
 from .numberplate import NumberPlate
 from typing import Union, List
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 
 class FastANPR:

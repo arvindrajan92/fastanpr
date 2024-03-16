@@ -1,6 +1,7 @@
+import fastanpr
 from setuptools import setup, find_packages
 
-VERSION = '0.1.1'
+VERSION = fastanpr.__version__
 DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
