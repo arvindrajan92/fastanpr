@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
 
-
-VERSION ="0.1.3"
+VERSION = "0.1.3"
 DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
@@ -19,7 +18,9 @@ setup(
     include_package_data=True,
     install_requires=['ultralytics>=8.1.26', 'paddlepaddle>=2.6.0', 'paddleocr>=2.7.0.3'],
     python_requires='>=3.8, <3.12',
-    extras_require={'dev': ['pytest-asyncio>=0.23.5', 'twine>=5.0.0', 'python-Levenshtein>=0.25.0']},
+    extras_require={
+        'dev': ['pytest', 'pytest-asyncio', 'twine', 'python-Levenshtein', 'setuptools', 'wheel', 'twine', 'flake8']
+    },
     license='MIT',
     classifiers=[
         "Programming Language :: Python :: 3.8",
