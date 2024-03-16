@@ -25,7 +25,7 @@ class FastANPR:
         self.device = device
 
     async def run(self, images: Union[np.ndarray, List[np.ndarray]]) -> List[List[NumberPlate]]:
-        """Run Fast ANPR on the list of image(s) provided."""
+        """Runs ANPR on a list of images and return a list of detected number plates."""
         # Images are expected to be numpy arrays of dimension 3 (HWC) or 4 (BHWC), or list of numpy arrays
         if isinstance(images, np.ndarray):
             if len(images.shape) == 3:

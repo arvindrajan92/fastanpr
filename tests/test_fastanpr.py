@@ -1,4 +1,5 @@
 import cv2
+import time
 import pytest
 import Levenshtein
 import numpy as np
@@ -7,7 +8,7 @@ from pathlib import Path
 from fastanpr import FastANPR
 
 
-
+fastanpr = FastANPR()
 
 
 @pytest.mark.asyncio
@@ -22,8 +23,12 @@ from fastanpr import FastANPR
     ]
 )
 async def test_image(file: str, expected_plates: List[str]):
-    fastanpr = FastANPR()
+    start = time.time()
     predicted_plates = (await fastanpr.run([image_path_to_ndarray(str(file))]))[0]
+    end = time.time()
+
+    # print processing time
+    print(f" {file.name}: {round(end - start, 4)} s", flush=True)
 
     # same number of plates predicted
     assert len(predicted_plates) == len(expected_plates)
