@@ -1,11 +1,10 @@
-__version__ = "0.1.3"
-
 import numpy as np
 from pathlib import Path
 from ultralytics import YOLO
 from paddleocr import PaddleOCR
 
 from .numberplate import NumberPlate
+from .version import __version__
 from typing import Union, List
 
 

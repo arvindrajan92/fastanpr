@@ -33,12 +33,8 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
-      run: |
-        pytest --exitfirst --verbose --failed-first
+      run: pytest --exitfirst --verbose --failed-first
     - name: Build binary wheel and a source tarball
       run: python setup.py bdist_wheel sdist
-    - name: Publish distribution to Test PyPI
-      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-      with:
-        user: __token__
-        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+    - name: Checking distribution
+      run: twine check dist/*
