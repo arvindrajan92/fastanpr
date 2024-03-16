@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-from fastanpr.version import __version__ as version
 
 
 DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
@@ -8,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="fastanpr",
-    version=version,
+    version="0.1.3",
     author="arvindrajan92 (Arvind Rajan)",
     author_email="<arvindrajan92@gmail.com>",
     description=DESCRIPTION,
