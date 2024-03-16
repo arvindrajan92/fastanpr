@@ -1,5 +1,5 @@
 # FastANPR
-[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)
+![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)
 
 A fast automatic number-plate recognition (ANPR) library. This package employs YOLOv8, a lightweight model, for detection, and Paddle OCR, a lightweight *optical character recognition* (OCR) library.
 
