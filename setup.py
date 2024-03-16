@@ -1,13 +1,14 @@
 from setuptools import setup, find_packages
 
 
+VERSION ="0.1.3"
 DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
 
 setup(
     name="fastanpr",
-    version="0.1.3",
+    version=VERSION,
     author="arvindrajan92 (Arvind Rajan)",
     author_email="<arvindrajan92@gmail.com>",
     description=DESCRIPTION,
