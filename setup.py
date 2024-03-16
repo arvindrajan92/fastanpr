@@ -17,7 +17,7 @@ setup(
     package_data={'': ['*.pt'], 'fastanpr': ['*.pt']},
     include_package_data=True,
     install_requires=['ultralytics>=8.1.26', 'paddlepaddle>=2.6.0', 'paddleocr>=2.7.0.3'],
-    python_requires='>=3.8',
+    python_requires='>=3.8, <=3.11',
     extras_require={'dev': ['pytest-asyncio>=0.23.5', 'twine>=5.0.0', 'python-Levenshtein>=0.25.0']},
     license='MIT',
     classifiers=[
@@ -25,7 +25,6 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
-        "Programming Language :: Python :: 3.12",
         "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
         "Operating System :: OS Independent",
     ],

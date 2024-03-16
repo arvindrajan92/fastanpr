@@ -28,18 +28,20 @@ async def show_anpr_result(files: List[str]) -> None:
     for file, anpr_result in zip(files, anpr_results):
         print(file, '\n', anpr_result)
     print(f'{round(end_time-start_time, 4)} s\n')
-
-# To use cuda, replace 'cpu' with 'cuda' or device id, e.g., '0'. Default is set to 'cpu'.
-fast_anpr = FastANPR(device='cpu')
+    
+    return anpr_results
 
 # list of image files
 files = [...]
 
-# sending images individually
-_ = await asyncio.gather(*[show_anpr_result(file) for file in files])
+# To use cuda, replace 'cpu' with 'cuda' or device id, e.g., '0'. Default is set to 'cpu'.
+fast_anpr = FastANPR(device='cpu')
 
-# sending all images at once
-result = await show_anpr_result(files)
+# sending images individually
+result_individual = await asyncio.gather(*[show_anpr_result([file]) for file in files])
+
+# sending all images at once - outcome should be almost identical to result_individual
+result_all = await show_anpr_result(files)
 ```
 
 ## Licence
