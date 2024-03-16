@@ -21,7 +21,11 @@ setup(
     extras_require={'dev': ['pytest-asyncio>=0.23.5', 'twine>=5.0.0', 'python-Levenshtein>=0.25.0']},
     license='MIT',
     classifiers=[
+        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
         "Operating System :: OS Independent",
     ],

@@ -1,11 +1,13 @@
 import cv2
 import pytest
 import Levenshtein
-
-from fastanpr import FastANPR
-from pathlib import Path
-from typing import List
 import numpy as np
+from typing import List
+from pathlib import Path
+from fastanpr import FastANPR
+
+
+
 
 
 @pytest.mark.asyncio

@@ -1,4 +1,6 @@
 # FastANPR
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)
+
 A fast automatic number-plate recognition (ANPR) library. This package employs YOLOv8, a lightweight model, for detection, and Paddle OCR, a lightweight *optical character recognition* (OCR) library.
 
 ## Installation
@@ -9,20 +11,35 @@ pip install fastanpr
 ## Usage
 ```python
 import cv2
+import time
 import asyncio
 
+from typing import List
 from fastanpr import FastANPR
+
+async def show_anpr_result(files: List[str]) -> None:
+    "Reads image files and sends through fastanpr and reports the processing time taken"
+    images = [cv2.cvtColor(cv2.imread(file), cv2.COLOR_BGR2RGB) for file in files]
+    
+    start_time = time.time()
+    anpr_results = await fast_anpr.run(images)
+    end_time = time.time()
+    
+    for file, anpr_result in zip(files, anpr_results):
+        print(file, '\n', anpr_result)
+    print(f'{round(end_time-start_time, 4)} s\n')
 
 # To use cuda, replace 'cpu' with 'cuda' or device id, e.g., '0'. Default is set to 'cpu'.
 fast_anpr = FastANPR(device='cpu')
 
-async def show_anpr_result(file: str) -> None:
-    image = cv2.cvtColor(cv2.imread(file), cv2.COLOR_BGR2RGB)
-    anpr_result = await fast_anpr.run(image)
-    print(anpr_result)
-
+# list of image files
 files = [...]
+
+# sending images individually
 _ = await asyncio.gather(*[show_anpr_result(file) for file in files])
+
+# sending all images at once
+result = await show_anpr_result(files)
 ```
 
 ## Licence
