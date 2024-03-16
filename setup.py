@@ -17,7 +17,7 @@ setup(
     package_data={'': ['*.pt'], 'fastanpr': ['*.pt']},
     include_package_data=True,
     install_requires=['ultralytics>=8.1.26', 'paddlepaddle>=2.6.0', 'paddleocr>=2.7.0.3'],
-    python_requires='>=3.8, <3.12',
+    python_requires='>=3.8',
     extras_require={
         'dev': ['pytest', 'pytest-asyncio', 'twine', 'python-Levenshtein', 'setuptools', 'wheel', 'twine', 'flake8']
     },
@@ -27,6 +27,8 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
         "Operating System :: OS Independent",
     ],
