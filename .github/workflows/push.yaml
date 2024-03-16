@@ -1,4 +1,4 @@
-name: Tests
+name: main
 
 on:
   pull_request:
@@ -16,6 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
@@ -34,3 +35,10 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --exitfirst --verbose --failed-first
+    - name: Build binary wheel and a source tarball
+      run: python setup.py bdist_wheel sdist
+    - name: Publish distribution to Test PyPI
+      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: __token__
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
