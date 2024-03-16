@@ -1,7 +1,7 @@
 # FastANPR
 [![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/arvindrajan92/fastanpr)](https://github.com/arvindrajan92/fastanpr/releases)
-![Supports](https://img.shields.io/badge/supports-Linux%2C%20macOS%2C%20Windows-success)
+[![Supports](https://img.shields.io/badge/supports-Linux%2C%20macOS%2C%20Windows%2C%20Raspberry%20Pi%20OS-success)](https://github.com/arvindrajan92/fastanpr)
 [![Python Versions](https://img.shields.io/badge/python-3.8%20to%203.11-blue)](https://www.python.org/downloads/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![GitHub stars](https://img.shields.io/github/stars/arvindrajan92/fastanpr?style=social)](https://github.com/arvindrajan92/fastanpr)
