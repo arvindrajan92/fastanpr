@@ -17,7 +17,7 @@ setup(
     package_data={'': ['*.pt'], 'fastanpr': ['*.pt']},
     include_package_data=True,
     install_requires=['ultralytics>=8.1.26', 'paddlepaddle>=2.6.0', 'paddleocr>=2.7.0.3'],
-    python_requires='>=3.9',
+    python_requires='>=3.8',
     extras_require={'dev': ['pytest-asyncio>=0.23.5', 'twine>=5.0.0', 'python-Levenshtein>=0.25.0']},
     license='MIT',
     classifiers=[
