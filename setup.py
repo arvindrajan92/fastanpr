@@ -20,8 +20,8 @@ if "-" in VERSION:
 assert "-" not in VERSION
 assert "." in VERSION
 
-assert os.path.isfile("cf_remote/version.py")
-with open("cf_remote/version.py", "w", encoding="utf-8") as fh:
+assert os.path.isfile("fastanpr/version.py")
+with open("fastanpr/version.py", "w", encoding="utf-8") as fh:
     fh.write(f"__version__ = \"{VERSION}\"")
 
 VERSION = "0.1.3"
