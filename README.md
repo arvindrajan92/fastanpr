@@ -9,7 +9,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/arvindrajan92/fastanpr?style=social)](https://github.com/arvindrajan92/fastanpr)
 
 ## Introduction
-A fast *automatic number-plate recognition* (ANPR) library. This package employs YOLOv8, a lightweight model, for detection, and Paddle OCR, a lightweight *optical character recognition* (OCR) library, for recognizing text in detected number plates.
+A fast *automatic number-plate recognition* (ANPR) library. This package employs [YOLOv8](https://github.com/ultralytics/ultralytics), a lightweight model, for detection, and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR), a lightweight *optical character recognition* (OCR) library, for recognizing text in detected number plates.
 ![Example outputs](misc/sample.png)
 
 ## Installation
