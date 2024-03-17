@@ -21,7 +21,7 @@ try:
     assert "-" not in VERSION
     assert "." in VERSION
 except:
-    VERSION = "0.1.3"
+    VERSION = "0.0.0"
 
 assert os.path.isfile("fastanpr/version.py")
 with open("fastanpr/version.py", "w", encoding="utf-8") as fh:
