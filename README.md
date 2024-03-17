@@ -1,6 +1,8 @@
 <img src="misc/logo.jpg" alt="FastANPR logo" style="width:100%;">
 
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/merge.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/publish.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/arvindrajan92/fastanpr)](https://github.com/arvindrajan92/fastanpr/releases)
 [![Python Versions](https://img.shields.io/badge/python-3.8%20to%203.12-blue)](https://www.python.org/downloads/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)

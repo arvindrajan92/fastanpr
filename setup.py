@@ -1,4 +1,28 @@
+import os
+import subprocess
 from setuptools import setup, find_packages
+
+VERSION = (
+    subprocess.run(["git", "describe", "--tags"], stdout=subprocess.PIPE)
+    .stdout.decode("utf-8")
+    .strip()
+    .lstrip("v.")
+)
+
+if "-" in VERSION:
+    # when not on tag, git describe outputs: "1.3.3-22-gdf81228"
+    # pip has gotten strict with version numbers
+    # so change it to: "1.3.3+22.git.gdf81228"
+    # See: https://peps.python.org/pep-0440/#local-version-segments
+    v,i,s = VERSION.split("-")
+    VERSION = v + "+" + i + ".git." + s
+
+assert "-" not in VERSION
+assert "." in VERSION
+
+assert os.path.isfile("cf_remote/version.py")
+with open("cf_remote/version.py", "w", encoding="utf-8") as fh:
+    fh.write(f"__version__ = \"{VERSION}\"")
 
 VERSION = "0.1.3"
 DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
