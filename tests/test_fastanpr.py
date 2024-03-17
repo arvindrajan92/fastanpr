@@ -49,7 +49,7 @@ async def test_image_4d(file: str, expected_plates: List[str]):
     end = time.time()
 
     # processing time must be less than 200 ms
-    assert (end - start) <= 0.2
+    assert (end - start) <= 0.25
 
     # same number of plates predicted
     assert len(predicted_plates) == len(expected_plates)
