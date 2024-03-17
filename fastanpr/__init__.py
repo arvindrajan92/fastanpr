@@ -4,9 +4,8 @@ from ultralytics import YOLO
 from paddleocr import PaddleOCR
 
 from .numberplate import NumberPlate
+from .version import __version__
 from typing import Union, List
-
-__version__ = "0.1.2"
 
 
 class FastANPR:

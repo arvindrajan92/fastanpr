@@ -1,13 +1,15 @@
-<img src="misc/logo.jpg" alt="alt-text" style="width:100%;">
+<img src="misc/logo.jpg" alt="FastANPR logo" style="width:100%;">
 
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/merge.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/publish.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/arvindrajan92/fastanpr)](https://github.com/arvindrajan92/fastanpr/releases)
-[![Python Versions](https://img.shields.io/badge/python-3.8%20to%203.11-blue)](https://www.python.org/downloads/)
+[![Python Versions](https://img.shields.io/badge/python-3.8%20to%203.12-blue)](https://www.python.org/downloads/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![GitHub stars](https://img.shields.io/github/stars/arvindrajan92/fastanpr?style=social)](https://github.com/arvindrajan92/fastanpr)
 
 ## Introduction
-A fast *automatic number-plate recognition* (ANPR) library. This package employs YOLOv8, a lightweight model, for detection, and Paddle OCR, a lightweight *optical character recognition* (OCR) library, for recognizing text in detected number plates.
+A fast *automatic number-plate recognition* (ANPR) library. This package employs [YOLOv8](https://github.com/ultralytics/ultralytics), a lightweight model, for detection, and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR), a lightweight *optical character recognition* (OCR) library, for recognizing text in detected number plates.
 ![Example outputs](misc/sample.png)
 
 ## Installation
@@ -21,14 +23,14 @@ import cv2
 from fastanpr import FastANPR
 
 # Create an instance of FastANPR
-fastanpr = FastANPR()
+fast_anpr = FastANPR()
 
 # Load images (images should be of type numpy ndarray)
 files = [...]
 images = [cv2.cvtColor(cv2.imread(file), cv2.COLOR_BGR2RGB) for file in files]
 
 # Run ANPR on the images
-number_plates = await fastanpr.run(images)
+number_plates = await fast_anpr.run(images)
 
 # Print out results
 for file, plates in zip(files, number_plates):
