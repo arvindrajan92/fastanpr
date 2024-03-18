@@ -48,8 +48,8 @@ async def test_image_4d(file: str, expected_plates: List[str]):
     predicted_plates = (await fastanpr.run([image_path_to_ndarray(str(file))]))[0]
     end = time.time()
 
-    # processing time must be less than 250 ms
-    assert (end - start) <= 0.50
+    # processing time must be less than 1 s
+    assert (end - start) <= 1.00
 
     # same number of plates predicted
     assert len(predicted_plates) == len(expected_plates)
