@@ -25,7 +25,7 @@ async def test_image_3d():
         for predicted_plate in predicted_plates
     )
 
-    # minimum Levenshtein distance must be 1
+    # maximum Levenshtein distance must be 1
     assert all(
         min(Levenshtein.distance(predicted_plate.rec_text, expected_plates) for expected_plates in expected_plates) <= 1
         for predicted_plate in predicted_plates
@@ -48,7 +48,7 @@ async def test_image_4d(file: str, expected_plates: List[str]):
     predicted_plates = (await fastanpr.run([image_path_to_ndarray(str(file))]))[0]
     end = time.time()
 
-    # processing time must be less than 200 ms
+    # processing time must be less than 250 ms
     assert (end - start) <= 0.25
 
     # same number of plates predicted
