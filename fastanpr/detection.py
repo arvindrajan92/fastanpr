@@ -20,6 +20,7 @@ class Detector:
 
     def run(self, images: List[np.ndarray]) -> List[List[Detection]]:
         predictions = self.model.predict(images, device=self.device, verbose=False)
+        results = []
         for image, detection in zip(images, predictions):
             image_detections = []
             if detection.boxes:
@@ -28,4 +29,5 @@ class Detector:
                 for det_box, det_conf in zip(det_boxes, det_confs):
                     x_min, x_max, y_min, y_max = det_box[0], det_box[2], det_box[1], det_box[3]
                     image_detections.append(Detection(image[y_min:y_max+1, x_min:x_max+1, :], det_box[:4], det_conf))
-            yield image_detections
+            results.append(image_detections)
+        return results
