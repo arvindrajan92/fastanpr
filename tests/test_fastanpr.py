@@ -7,8 +7,29 @@ from typing import List
 from pathlib import Path
 from fastanpr import FastANPR
 
-
 fastanpr = FastANPR()
+
+
+@pytest.mark.asyncio
+async def test_image_3d():
+    file = Path(__file__).parent / 'images/image001.jpg'
+    expected_plates = ['BVH826']
+    predicted_plates = (await fastanpr.run(image_path_to_ndarray(str(file))))[0]
+
+    # same number of plates predicted
+    assert len(predicted_plates) == len(expected_plates)
+
+    # ocr box is inside detected box
+    assert all(
+        ocr_box_encapsulates_detected_box(poly_to_bbox(predicted_plate.rec_poly), predicted_plate.det_box)
+        for predicted_plate in predicted_plates
+    )
+
+    # maximum Levenshtein distance must be 1
+    assert all(
+        min(Levenshtein.distance(predicted_plate.rec_text, expected_plates) for expected_plates in expected_plates) <= 1
+        for predicted_plate in predicted_plates
+    )
 
 
 @pytest.mark.asyncio
@@ -22,13 +43,13 @@ fastanpr = FastANPR()
         (Path(__file__).parent / 'images/image006.jpg', ['BPN325']),
     ]
 )
-async def test_image(file: str, expected_plates: List[str]):
+async def test_image_4d(file: str, expected_plates: List[str]):
     start = time.time()
     predicted_plates = (await fastanpr.run([image_path_to_ndarray(str(file))]))[0]
     end = time.time()
 
-    # print processing time
-    print(f" {file.name}: {round(end - start, 4)} s", flush=True)
+    # processing time must be less than 250 ms
+    assert (end - start) <= 0.25
 
     # same number of plates predicted
     assert len(predicted_plates) == len(expected_plates)

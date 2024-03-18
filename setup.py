@@ -11,21 +11,19 @@ try:
     )
 
     if "-" in VERSION:
-        # when not on tag, git describe outputs: "1.3.3-22-gdf81228"
-        # pip has gotten strict with version numbers
-        # so change it to: "1.3.3+22.git.gdf81228"
-        # See: https://peps.python.org/pep-0440/#local-version-segments
-        v,i,s = VERSION.split("-")
+        v, i, s = VERSION.split("-")
         VERSION = v + "+" + i + ".git." + s
 
     assert "-" not in VERSION
     assert "." in VERSION
-except:
-    VERSION = "0.0.0"
 
-assert os.path.isfile("fastanpr/version.py")
-with open("fastanpr/version.py", "w", encoding="utf-8") as fh:
-    fh.write(f"__version__ = \"{VERSION}\"")
+    assert os.path.isfile("fastanpr/version.py")
+    with open("fastanpr/version.py", "w", encoding="utf-8") as fh:
+        fh.write(f"__version__ = \"{VERSION}\"\n")
+
+except Exception:
+    with open("fastanpr/version.py", "r", encoding="utf-8") as fh:
+        VERSION = fh.read().strip().lstrip("__version__ = \"").rstrip("\"")
 
 DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
 with open("README.md", "r") as fh:
