@@ -16,9 +16,15 @@ A fast *automatic number-plate recognition* (ANPR) library. This package employs
 ![Example outputs](misc/sample.png)
 
 ## Installation
+You can install the package using pip:
 ```bash
 pip install fastanpr
 ```
+### Requirements
+- Windows:
+  - Python >=3.9, <3.11
+- Ubuntu, macOS, Raspbian:
+  - Python >=3.9, <3.12
 
 ## Usage
 ```python
