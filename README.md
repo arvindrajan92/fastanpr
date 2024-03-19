@@ -1,6 +1,9 @@
 <img src="misc/logo.jpg" alt="FastANPR logo" style="width:100%;">
 
 [![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/merge.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/merge_macos.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/merge_raspbian.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
+[![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/merge_windows.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/push.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![Build Status](https://github.com/arvindrajan92/fastanpr/actions/workflows/publish.yaml/badge.svg)](https://github.com/arvindrajan92/fastanpr/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/arvindrajan92/fastanpr)](https://github.com/arvindrajan92/fastanpr/releases)
@@ -13,9 +16,15 @@ A fast *automatic number-plate recognition* (ANPR) library. This package employs
 ![Example outputs](misc/sample.png)
 
 ## Installation
+You can install the package using pip:
 ```bash
 pip install fastanpr
 ```
+### Requirements
+- Windows:
+  - Python >=3.9, <3.11
+- Ubuntu, macOS, Raspbian:
+  - Python >=3.9, <3.12
 
 ## Usage
 ```python
