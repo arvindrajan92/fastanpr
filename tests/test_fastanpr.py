@@ -1,5 +1,4 @@
 import cv2
-import time
 import pytest
 import Levenshtein
 import numpy as np

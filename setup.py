@@ -1,7 +1,9 @@
 import os
+import sys
 import subprocess
 from setuptools import setup, find_packages
 
+# Getting build version
 try:
     VERSION = (
         subprocess.run(["git", "describe", "--tags"], stdout=subprocess.PIPE)
@@ -25,7 +27,13 @@ except Exception:
     with open("fastanpr/version.py", "r", encoding="utf-8") as fh:
         VERSION = fh.read().strip().lstrip("__version__ = \"").rstrip("\"")
 
-DESCRIPTION = 'A fast automatic number-plate recognition (ANPR) library'
+# Set Python version requirements based on the operating system
+if sys.platform.startswith('win'):
+    PYTHON_REQUIRES = '>=3.8, <3.11'
+else:
+    PYTHON_REQUIRES = '>=3.8, <3.12'
+
+# Getting long description from README
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
 
@@ -34,14 +42,14 @@ setup(
     version=VERSION,
     author="arvindrajan92 (Arvind Rajan)",
     author_email="<arvindrajan92@gmail.com>",
-    description=DESCRIPTION,
+    description='A fast automatic number-plate recognition (ANPR) library',
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     package_data={'': ['*.pt'], 'fastanpr': ['*.pt']},
     include_package_data=True,
     install_requires=['ultralytics>=8.1.26', 'paddlepaddle>=2.6.0', 'paddleocr>=2.7.0.3'],
-    python_requires='>=3.8',
+    python_requires=PYTHON_REQUIRES,
     extras_require={
         'dev': ['pytest', 'pytest-asyncio', 'twine', 'python-Levenshtein', 'setuptools', 'wheel', 'twine', 'flake8']
     },
