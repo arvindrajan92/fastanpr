@@ -22,9 +22,9 @@ pip install fastanpr
 ```
 ### Requirements
 - Windows:
-  - Python >=3.9, <3.11
+  - Python >=3.8, <3.11
 - Ubuntu, macOS, Raspbian:
-  - Python >=3.9, <3.12
+  - Python >=3.8, <3.12
 
 ## Usage
 ```python
