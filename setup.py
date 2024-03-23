@@ -31,7 +31,7 @@ except Exception:
 if sys.platform.startswith('win'):
     PYTHON_REQUIRES = '>=3.8, <3.11'
 else:
-    PYTHON_REQUIRES = '>=3.8, <3.12'
+    PYTHON_REQUIRES = '>=3.8'
 
 # Getting long description from README
 with open("README.md", "r") as fh:
