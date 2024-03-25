@@ -48,7 +48,7 @@ setup(
     packages=find_packages(),
     package_data={'': ['*.pt'], 'fastanpr': ['*.pt']},
     include_package_data=True,
-    install_requires=['ultralytics>=8.1.26', 'paddlepaddle>=2.6.0', 'paddleocr>=2.7.0.3'],
+    install_requires=['ultralytics>=8.1.34', 'PyMuPDF==1.24.0', 'paddlepaddle>=2.6.1', 'paddleocr>=2.7.2'],
     python_requires=PYTHON_REQUIRES,
     extras_require={
         'dev': ['pytest', 'pytest-asyncio', 'twine', 'python-Levenshtein', 'setuptools', 'wheel', 'twine', 'flake8']
