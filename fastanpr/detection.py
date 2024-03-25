@@ -28,6 +28,6 @@ class Detector:
                 det_confs = detection.boxes.cpu().conf.numpy().tolist()
                 for det_box, det_conf in zip(det_boxes, det_confs):
                     x_min, x_max, y_min, y_max = det_box[0], det_box[2], det_box[1], det_box[3]
-                    image_detections.append(Detection(image[y_min:y_max+1, x_min:x_max+1, :], det_box[:4], det_conf))
+                    image_detections.append(Detection(image[y_min:y_max, x_min:x_max, :], det_box[:4], det_conf))
             results.append(image_detections)
         return results
